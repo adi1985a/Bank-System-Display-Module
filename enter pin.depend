@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1678130641 source:c:\users\hp\desktop\programy na github\c++\programs\enter pin to minibank\main.cpp
+	<iostream>
+	<string>
+
+1742007952 source:f:\my portafolio it ulepszona\c++\programs\enter pin to minibank\config.cpp
+	"Config.hpp"
+
+1742007600 f:\my portafolio it ulepszona\c++\programs\enter pin to minibank\config.hpp
+	<string>
+
+1742007950 source:f:\my portafolio it ulepszona\c++\programs\enter pin to minibank\display.cpp
+	"Display.hpp"
+	<iostream>
+	<limits>
+	<windows.h>
+
+1742007600 f:\my portafolio it ulepszona\c++\programs\enter pin to minibank\display.hpp
+	<string>
+
+1742007598 source:f:\my portafolio it ulepszona\c++\programs\enter pin to minibank\main.cpp
+	<iostream>
+	<stdexcept>
+	"BankSystem.hpp"
+
+1742007604 f:\my portafolio it ulepszona\c++\programs\enter pin to minibank\banksystem.hpp
+	<string>
+	<memory>
+	"Config.hpp"
+	"Display.hpp"
+
+1742007954 source:f:\my portafolio it ulepszona\c++\programs\enter pin to minibank\banksystem.cpp
+	"BankSystem.hpp"
+	<iostream>
+	<limits>
+	<algorithm>
+
