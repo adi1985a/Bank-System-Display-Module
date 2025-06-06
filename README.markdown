@@ -51,7 +51,6 @@ _Example screens: welcome, PIN prompt, main menu, PIN change, success/error mess
   <img src="screenshots\7.jpg" width="300"/>
   <img src="screenshots\8.jpg" width="300"/>
   <img src="screenshots\9.jpg" width="300"/>
-  <img src="screenshots\10.jpg" width="300"/>
   <img src="screenshots\11.jpg" width="300"/>
 </p>
 
