@@ -1,4 +1,4 @@
-# 🏦🔒 SecureBank: C++ Console Mini-Bank System
+# 🏦🔒 PUN SecureBank: Console Mini-Bank System
 
 _A C++ console application simulating a secure mini-bank system with PIN authentication, menu navigation, and robust error handling. Features a modular UI via the `Display` class and a main control flow managed by `BankSystem`._
 
