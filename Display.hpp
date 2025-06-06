@@ -5,14 +5,23 @@ class Display {
 public:
     void showWelcome() const;
     void showPinPrompt() const;
-    void showMainMenu() const;
-    void showSuccess() const;
+    void showSuccess(const std::string& msg = "Access granted!") const;
     void showError(const std::string& message) const;
-    void showChangePinMenu() const;
     void clearScreen() const;
-    int getMenuChoice() const;
     void setTextColor(int color) const;
     void resetColor() const;
+
+    void showMainMenu() const;
+    void showBalance(double balance) const;
+    void showDepositMenu() const;
+    void showWithdrawMenu() const;
+    void showChangePinMenu() const;
+
+    int getMenuChoice(int min, int max) const;
+    double promptAmount(const std::string& prompt) const;
+
+    void pause() const;
+
 private:
-    void drawSimpleLogo() const;
+    void drawLogo() const;
 };

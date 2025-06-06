@@ -8,7 +8,7 @@ int main() {
         bank.run();
     }
     catch (const std::exception& e) {
-        std::cerr << "Error: " << e.what() << std::endl;
+        std::cerr << "\nError: " << e.what() << std::endl;
         return 1;
     }
     return 0;

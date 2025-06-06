@@ -6,20 +6,24 @@
 
 class BankSystem {
 private:
-    std::string pin;
     int attempts;
+    bool isLoggedIn;
+    double balance;
+
     std::shared_ptr<Config> config;
     std::shared_ptr<Display> display;
-    bool isLoggedIn;
+
+    void handleLogin();
+    bool validatePin(const std::string& input);
+    bool validateNewPin(const std::string& newPin);
 
     void handleMainMenu();
+    void checkBalance();
+    void depositFunds();
+    void withdrawFunds();
     void changePin();
-    void showBalance();
-    bool validateNewPin(const std::string& newPin);
 
 public:
     BankSystem();
     void run();
-    bool validatePin(const std::string& input);
-    void handleLogin();
 };

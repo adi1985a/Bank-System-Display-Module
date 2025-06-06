@@ -1,88 +1,171 @@
-# Bank System Display Module
+# 🏦🔒 SecureBank: C++ Console Mini-Bank System
 
-## Overview
-This C++ `Display` class provides a console-based user interface for a bank system. It manages screen clearing, colored text output, and an ASCII logo. The class displays welcome messages, PIN prompts, main menu, PIN change interface, success/error messages, and handles user input for menu choices. It supports Windows-specific features and cross-platform compatibility.
+_A C++ console application simulating a secure mini-bank system with PIN authentication, menu navigation, and robust error handling. Features a modular UI via the `Display` class and a main control flow managed by `BankSystem`._
 
-## Features
-- **Display Class**:
-  - `showWelcome`: Displays an ASCII logo and welcome message.
-  - `showPinPrompt`: Prompts for PIN input.
-  - `showSuccess`: Shows access granted message.
-  - `showError`: Displays error messages with a custom string.
-  - `showMainMenu`: Shows menu with options: Check Balance, Change PIN, Logout.
-  - `showChangePinMenu`: Displays PIN change prompt.
-  - `getMenuChoice`: Retrieves validated user input for menu selections.
-- **Console Management**:
-  - `clearScreen`: Clears console (`cls` for Windows, `clear` for others).
-  - `setTextColor`/`resetColor`: Sets colored text (yellow, light cyan) on Windows.
-  - `drawSimpleLogo`: Renders an ASCII "SECURE BANK" logo.
-- **Cross-Platform Support**:
-  - Uses preprocessor directives (`#ifdef _WIN32`) for Windows-specific console functions.
-  - Non-Windows systems use basic console output without color.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![C++](https://img.shields.io/badge/Language-C%2B%2B%2011%2B-blue.svg)](https://isocpp.org/)
+[![Platform: Windows (Full) / Cross-platform (Basic)](https://img.shields.io/badge/Platform-Windows%20%7C%20Cross--platform-lightgrey.svg)]()
 
-## Requirements
-- C++ compiler (e.g., g++, clang++) with C++11 or later
-- Standard C++ libraries: `<iostream>`, `<limits>`
-- Windows-specific library: `<windows.h>` (for color and console functions)
-- Custom header: `Display.hpp` (class declaration, assumed provided)
-- Operating system: Windows for full functionality; others for basic output
+## 📋 Table of Contents
+1. [Overview](#-overview)
+2. [Key Features](#-key-features)
+3. [Screenshots (Conceptual)](#-screenshots-conceptual)
+4. [System Requirements](#-system-requirements)
+5. [Core Components](#-core-components)
+6. [Integration and Setup](#️-integration-and-setup)
+7. [Usage Example](#️-usage-example)
+8. [File Structure](#-file-structure)
+9. [Technical Notes](#-technical-notes)
+10. [Contributing](#-contributing)
+11. [License](#-license)
+12. [Contact](#-contact)
 
-## Setup
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd <repository-directory>
-   ```
-2. Ensure `Display.hpp` is in the project directory with the `Display` class declaration.
-3. Save the provided code as `Display.cpp`.
-4. Compile the program (example assumes a main program including `Display`):
-   ```bash
-   g++ main.cpp Display.cpp -o bank_system
-   ```
-5. Run the program:
-   ```bash
-   ./bank_system
-   ```
+## 📄 Overview
 
-## Usage
-1. Include `Display.hpp` in a main program to use the `Display` class.
-2. **Interface**:
-   - `showWelcome`: Shows "SECURE BANK" logo and welcome message.
-   - `showPinPrompt`: Prompts for PIN entry.
-   - `showMainMenu`: Displays options (1–3) for balance, PIN change, or logout.
-   - `showChangePinMenu`: Prompts for a new 4-digit PIN.
-   - `showSuccess`/`showError`: Shows access or error feedback.
-3. **Actions**:
-   - Use `getMenuChoice` to capture user input (1–3).
-   - Colors (yellow for logo, cyan for menus) enhance visibility on Windows.
-   - Screen clears between displays for a clean UI.
-4. **Output**:
-   - Example: Main menu shows logo and "1. Check Balance\n2. Change PIN\n3. Logout".
-   - Errors display as "✗ Error: [message]".
+The **SecureBank Mini-Bank System**, authored by Adrian Lesniak, is a C++ console application that simulates a simple banking environment. It features secure PIN entry, a main menu for banking operations, and robust error handling. The UI is managed by a dedicated `Display` class, while the application flow and logic are encapsulated in the `BankSystem` class.
 
-## File Structure
-- `Display.cpp`: Source file with `Display` class implementation.
-- `Display.hpp`: Header file with `Display` class declaration (assumed, not provided).
-- `README.md`: This file, providing project documentation.
+The entry point (`main.cpp`) creates a `BankSystem` object and runs the application, handling any exceptions gracefully.
 
-## Notes
-- Windows-specific for colored text and `cls`; non-Windows systems use `clear` and no colors.
-- Requires `Display.hpp` with class declaration and any referenced functions (e.g., `drawSimpleLogo`).
-- Input handling in `getMenuChoice` clears invalid input for robustness.
-- Extend by adding more menu options, animations, or full cross-platform color support.
-- No locale settings; uses English text for output.
-- Minimal dependencies: standard C++ libraries and `windows.h` for Windows.
+![Demo GIF](screenshots/1.gif)
 
-## Contributing
-Contributions are welcome! To contribute:
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Make changes and commit (`git commit -m "Add feature"`).
-4. Push to the branch (`git push origin feature-branch`).
-5. Open a pull request.
+## ✨ Key Features
 
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+* **Secure PIN Authentication**: Prompts for and validates user PINs.
+* **Menu Navigation**: Main menu with options (e.g., check balance, change PIN, logout).
+* **User Feedback**: Success and error messages with colored output (on Windows).
+* **Screen Management**: Clears and redraws screens for a clean UI.
+* **Robust Input Handling**: Validates menu choices and handles invalid input.
+* **Cross-Platform Considerations**: Works on Windows (full features) and Linux/macOS (basic).
 
-## Contact
-For questions or feedback, open an issue on GitHub or contact the repository owner.
+## 🖼️ Screenshots (Conceptual)
+
+_Example screens: welcome, PIN prompt, main menu, PIN change, success/error messages._
+
+<p align="center">
+  <img src="screenshots\1.jpg" width="300"/>
+  <img src="screenshots\2.jpg" width="300"/>
+  <img src="screenshots\3.jpg" width="300"/>
+  <img src="screenshots\4.jpg" width="300"/>
+  <img src="screenshots\5.jpg" width="300"/>
+  <img src="screenshots\6.jpg" width="300"/>
+  <img src="screenshots\7.jpg" width="300"/>
+  <img src="screenshots\8.jpg" width="300"/>
+  <img src="screenshots\9.jpg" width="300"/>
+  <img src="screenshots\10.jpg" width="300"/>
+  <img src="screenshots\11.jpg" width="300"/>
+</p>
+
+## ⚙️ System Requirements
+
+* **Operating System**:
+    * **Windows**: Full functionality (colored output).
+    * **Linux/macOS**: Basic functionality (default colors).
+* **C++ Compiler**: C++11 or later.
+* **Standard Libraries**: `<iostream>`, `<string>`, `<limits>`, `<iomanip>`.
+* **Windows-specific**: `<windows.h>` (for color, optional).
+* **Project Files**: `main.cpp`, `BankSystem.hpp/cpp`, `Display.hpp/cpp`.
+
+## 🧩 Core Components
+
+### `main.cpp`
+
+The entry point. Handles application startup and error reporting:
+
+```cpp
+#include <iostream>
+#include <stdexcept>
+#include "BankSystem.hpp"
+
+int main() {
+    try {
+        BankSystem bank;
+        bank.run();
+    }
+    catch (const std::exception& e) {
+        std::cerr << "\nError: " << e.what() << std::endl;
+        return 1;
+    }
+    return 0;
+}
+```
+
+### `BankSystem` Class
+
+Encapsulates the main banking logic and uses the `Display` class for UI. Responsible for authentication, menu flow, and user actions.
+
+### `Display` Class
+
+Handles all console UI: screen clearing, colored output, logo, menus, and messages. See [Display Module Documentation](#-display-module) for details.
+
+## 🛠️ Integration and Setup
+
+1. **Obtain Files**: Ensure you have `main.cpp`, `BankSystem.hpp/cpp`, `Display.hpp/cpp`.
+2. **Include in Project**: Add all files to your project directory.
+3. **Compile**: Example (g++):
+    ```bash
+    g++ main.cpp BankSystem.cpp Display.cpp -o minibank -std=c++11
+    ```
+4. **Run**:
+    * Windows: `.\minibank.exe`
+    * Linux/macOS: `./minibank`
+
+## 💡 Usage Example
+
+The main application flow is managed by `BankSystem`:
+
+```cpp
+#include "BankSystem.hpp"
+
+int main() {
+    try {
+        BankSystem bank;
+        bank.run(); // Handles login, menu, and actions
+    }
+    catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+        return 1;
+    }
+    return 0;
+}
+```
+
+Within `BankSystem`, the `Display` class is used for all UI interactions:
+
+```cpp
+// Example inside BankSystem methods
+display.showWelcome();
+display.showPinPrompt();
+display.showMainMenu();
+int choice = display.getMenuChoice(1, 3);
+// ... handle choice ...
+```
+
+## 🗂️ File Structure
+
+* `main.cpp` — Application entry point.
+* `BankSystem.hpp/cpp` — Main banking logic and flow.
+* `Display.hpp/cpp` — Console UI module.
+* `README.markdown` — This documentation.
+* `screenshots/` — Example UI images.
+
+## 📝 Technical Notes
+
+* **Exception Handling**: All runtime errors are caught in `main.cpp` and reported.
+* **UI Separation**: All display logic is encapsulated in `Display`.
+* **Cross-Platform**: Uses conditional compilation for Windows-specific features.
+* **Input Validation**: Ensures robust user input handling.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please fork, branch, and submit pull requests for improvements or new features. See [CONTRIBUTING](CONTRIBUTING.md) if available.
+
+## 📃 License
+
+Licensed under the **MIT License**.
+
+## 📧 Contact
+
+Created by **Adrian Lesniak**. For questions or feedback, open an issue or contact the repository owner.
+
+---
+✨ _Secure, modular, and user-friendly C++ console banking system._
